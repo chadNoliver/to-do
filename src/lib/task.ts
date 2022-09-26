@@ -1,7 +1,7 @@
 export class Task{
 
-    name: string="";
-    date: string="";
+    name: string="[TBD]";
+    date: string="[TBD]";
     pct: number=0; 
 
     constructor(){
@@ -11,36 +11,15 @@ export class Task{
     }
 
     setName():void {
-        let name:string|null = "";
-        while (isInvalidName(name)){
-            name = prompt("Please enter a task name of at least one and up to 15 characters.", "");
-        }
-        if (name==null){
-            this.name="";
-        }
-        else{this.name=name};
+        setNameFunc(this);
     }
 
     setDate():void {
-        let date:string|null ="";
-        while (isInvalidDate(date)){
-            date =prompt("Please enter a future due date in the format 'MM/DD/YYYY'.", "");
-        }
-        if (date==null){
-            this.date="";
-        }
-        else this.date=date;    
+        setDateFunc(this);
     }
     
     setPct():void {
-        let pct:string|null = "-1"; 
-        while (isInvalidPct(pct)){
-            pct = prompt("Please enter the progress completion percentage.", "");
-        }
-        if (pct==null){
-            this.pct=0;
-        }
-        else this.pct=parseInt(pct);
+        setPctFunc(this);
     }
 
     getName():string{
@@ -57,6 +36,44 @@ export class Task{
 
     }
 
+
+
+ 
+export function setNameFunc(task:Task){
+        let name:string|null = "";
+        while (isInvalidName(name)){
+            name = prompt("Please enter a task name of at least one and up to 15 characters.", "");
+        }
+        if (name==null||name==""){
+            task.name="[TBD]";
+        }
+
+        else{task.name=name};
+
+
+    }
+export function setDateFunc(task:Task){
+        let date:string|null ="";
+        while (isInvalidDate(date)){
+            date =prompt("Please enter a future due date in the format 'MM/DD/YYYY'.", "");
+        }
+        if (date==null || date==""){
+            task.date="[TBD]";
+        }
+        else task.date=date;    
+    }
+
+export function setPctFunc(task:Task){
+        let pct:string|null = "-1"; 
+        while (isInvalidPct(pct)){
+            pct = prompt("Please enter the progress completion percentage.", "");
+        }
+        if (pct==null){
+            task.pct=0;
+        }
+        else task.pct=parseInt(pct);
+
+    }
 
     function isInvalidName(name:string|null): boolean{
         if (name==null) return false;

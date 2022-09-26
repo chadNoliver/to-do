@@ -1,4 +1,7 @@
+// app.component.ts
+
 import { Component } from '@angular/core';
+
 import { Task } from "../lib/task";
 import { User } from "../lib/user";
 @Component({
@@ -6,23 +9,25 @@ import { User } from "../lib/user";
   templateUrl: './app.component.html'
 })
 
-export class AppComponent {
+export class AppComponent {                       
+                                                          // instantiate objects to be modified and sent to child
   user:User = new User();
   tasks: Task[] = new Array<Task>;
-  userList:User[] =new Array<User>;
+  userList: User[] =new Array<User>;
   newTask(){
-    let task:Task = new Task();
+                                                          // newTask as called from .html file
+    let task:Task = new Task();                           
     this.user.tasks.push(task);
-    this.saveUsers();
+    this.saveUsersComp();
   }
      
   ngOnInit(){
-    this.user = new User();
-    this.loadUsers();
-    this.findUser();
+    this.loadUsersComp();
+    this.findUserComp();
+    this.saveUsersComp();
   }
 
-  findUser(){
+  findUserComp(){
     for (let i = 0;i<this.userList.length;i++){
       if (this.userList[i].name==this.user.name){
           this.user = this.userList[i];
@@ -32,8 +37,8 @@ export class AppComponent {
     this.userList.push(this.user);
     return;
   }
-  
-  loadUsers(){
+
+  loadUsersComp(){
     console.log("loading users");
     
     let loadedUserList = window.localStorage.getItem('userList')||"[]";
@@ -43,7 +48,7 @@ export class AppComponent {
     console.log(loadedUserList); 
   }
 
-  saveUsers(){
+  saveUsersComp(){
     console.log("saving users");
     let stringifiedUserList = JSON.stringify(this.userList);
     console.log(stringifiedUserList);

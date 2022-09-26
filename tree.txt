@@ -1,23 +1,28 @@
+Angular Application Directory Tree
 .
-├── angular.json                 // Defaults for Angular CLI
-├── package.json                 // Package dependecies (npm)
-├── package-lock.json            // Info about installed packages
-├── README.md                    // Readme
-├── src                          // Source files for application
-│   │
-│   ├── lib                      // Library classes
-│   ├── app                      // Component files for app logic
-│   │   ├── app.component.ts     // Logic for root module
-│   │   └── app.module.ts        // Defines root module
-│   ├── assets                   // Images etc
-│   ├── environments             // Build congiguration options
-│   │   ├── environment.prod.ts  // Default production configs
-│   │   └── environment.ts       // Default configs
-│   ├── favicon.ico              // Bookmark icon
-│   ├── index.html               // Html entry point
-│   ├── main.ts                  // Application entry point
-│   ├── polyfills.ts             // Browser configuration files
-│   └── styles.css               // Css for app
-├── tsconfig.app.json            // Extended TypeScript config for app
-└── tsconfig.json                // Typescript config file
-
+├── angular.json                            // Defaults for Angular CLI            
+├── package.json                            // Package dependecies (npm)
+├── package-lock.json                       // Info about installed packages
+├── README.md                               // Readme
+├── src                                     // Source files for application
+│   ├── app                                                                     
+│   │   ├── app.component.html              // Html template for app component  
+│   │   ├── app.component.ts                // Component files for app logic    
+│   │   ├── app.module.ts                   // Logic for root module            
+│   │   └── task-row                                                              
+│   │       ├── task-row.component.html     // Html template task-row component 
+│   │       └── task-row.component.ts       // Logic for task-row component     
+│   ├── assets                              
+│   ├── environments                        // Images etc
+│   │   ├── environment.prod.ts             // Build congiguration options
+│   │   └── environment.ts                  // Default production configs
+│   ├── favicon.ico                         // Default configs
+│   ├── index.html                          // Bookmark icon
+│   ├── lib                                 // Html entry point
+│   │   ├── task.ts                         
+│   │   └── user.ts                         
+│   ├── main.ts                             // Application entry point
+│   ├── polyfills.ts                        // Browser configuration files
+│   └── styles.css                          // Css for app
+├── tsconfig.app.json                       // Extended TypeScript config for app
+└── tsconfig.json                           // TypeScript config for general

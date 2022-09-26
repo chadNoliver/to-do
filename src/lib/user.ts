@@ -8,3 +8,30 @@ export class User {
     this.tasks= new Array<Task>;
   }
 }
+export function saveUsersFunc(userList:User[]){
+    console.log("saving users");
+    let stringifiedUserList = JSON.stringify(userList);
+    console.log(stringifiedUserList);
+    window.localStorage.setItem("userList", stringifiedUserList);
+}
+export function  findUserFunc(userList:User[], user:User){
+    for (let i = 0;i<userList.length;i++){
+      if (userList[i].name==user.name){
+          user = userList[i];
+          return;
+      }
+    }
+    userList.push(user);
+    return;
+  }
+
+export function loadUsersFunc(userList:User[]){
+    console.log("loading users");
+    let loadedUserList = window.localStorage.getItem('userList')||"[]";
+    if((loadedUserList!="[]") && (loadedUserList!="undefined")){
+      userList = JSON.parse(loadedUserList);
+    }
+    console.log(loadedUserList); 
+  }
+
+

@@ -1,7 +1,11 @@
+
+<!-- app.component.html -->
+
 <body>
         <div style="text-align:center;"></div>
         <br>
-        <button id="newtask" (click)="newTask()">New Task</button>
+                                                                     <!-- add (click) directive to execute newTask() -->
+        <button id="newtask" (click)="newTask()">New Task</button> 
         <br><br><br>
         <table style="width:100%">
             <tr class="toprow">
@@ -15,9 +19,12 @@
                     <b>Progress</b>
                 </td>
             </tr>
-            <tr class="itemrow" app-task-row *ngFor="let task of user.tasks;
-                index as i; trackBy: taskTrackByMethod"
-                [task]="task" clickable></tr>
+                                                   <!-- Utilize *ngFor directive to dynamically allocate task-row components -->
+            <tr class="itemrow" app-task-row
+                *ngFor="let task of user.tasks"                     
+                [task]="task" 
+                (change)="saveUsersComp();" ></tr>
+                                                   <!-- bind task to task and save upon data change with (change) directive -->
           </table>
     </body>
 
