@@ -1,0 +1,23 @@
+.
+├── angular.json                 // Defaults for Angular CLI
+├── package.json                 // Package dependecies (npm)
+├── package-lock.json            // Info about installed packages
+├── README.md                    // Readme
+├── src                          // Source files for application
+│   │
+│   ├── lib                      // Library classes
+│   ├── app                      // Component files for app logic
+│   │   ├── app.component.ts     // Logic for root module
+│   │   └── app.module.ts        // Defines root module
+│   ├── assets                   // Images etc
+│   ├── environments             // Build congiguration options
+│   │   ├── environment.prod.ts  // Default production configs
+│   │   └── environment.ts       // Default configs
+│   ├── favicon.ico              // Bookmark icon
+│   ├── index.html               // Html entry point
+│   ├── main.ts                  // Application entry point
+│   ├── polyfills.ts             // Browser configuration files
+│   └── styles.css               // Css for app
+├── tsconfig.app.json            // Extended TypeScript config for app
+└── tsconfig.json                // Typescript config file
+

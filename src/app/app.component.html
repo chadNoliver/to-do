@@ -1,0 +1,23 @@
+<body>
+        <div style="text-align:center;"></div>
+        <br>
+        <button id="newtask" (click)="newTask()">New Task</button>
+        <br><br><br>
+        <table style="width:100%">
+            <tr class="toprow">
+                <td>
+                    <b>Task</b>
+                </td>
+                <td>
+                    <b>Due Date</b>
+                </td>
+                <td>
+                    <b>Progress</b>
+                </td>
+            </tr>
+            <tr class="itemrow" app-task-row *ngFor="let task of user.tasks;
+                index as i; trackBy: taskTrackByMethod"
+                [task]="task" clickable></tr>
+          </table>
+    </body>
+

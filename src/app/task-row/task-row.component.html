@@ -1,0 +1,19 @@
+  <td [ngClass]="{'green': task.pct>75,
+    'red': task.pct<25}" (click)="task.setName()">
+
+      {{task.name}}
+
+  </td>
+      
+  <td [ngClass]="{'green': task.pct>75,
+                  'red': task.pct<25}" (click)="task.setDate()">
+
+      {{task.date}}
+
+  </td>
+
+   <td [ngClass]="{'green': task.pct>75,
+                  'red': task.pct<25}" (click)="task.setPct()">
+    {{task.pct}}
+
+  </td>
