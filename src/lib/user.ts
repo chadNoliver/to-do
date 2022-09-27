@@ -25,10 +25,10 @@ export function  findUserFunc(userList:User[], user:User){
     return;
   }
 
-export function loadUsersFunc(userList:User[]){
+function loadUsersFunc(userList:User[]){
     console.log("loading users");
     let loadedUserList = window.localStorage.getItem('userList')||"[]";
-    if((loadedUserList!="[]") && (loadedUserList!="undefined")){
+    if((JSON.parse(loadedUserList).length>0)){
       userList = JSON.parse(loadedUserList);
     }
     console.log(loadedUserList); 

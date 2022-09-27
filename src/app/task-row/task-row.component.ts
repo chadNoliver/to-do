@@ -14,11 +14,14 @@ export class TaskRowComponent implements OnInit {
 @Input() task: Task;                              //Uses @Input directive to access task from parent          
 @Input() userList:User[];                         //Uses @Input directive to access userList form parent
 @Output() taskChange = new EventEmitter<Task>();  //Uses @Output directive to emit data to parent upon change
+@Output() userListChange = new EventEmitter<User[]>();  //Uses @Output directive to emit data to parent upon change
+@Output("saveUsersCompEmit") saveUsersCompEmit: EventEmitter<any> = new EventEmitter();
   ngOnInit(): void {
   }
   sendData(){
     this.taskChange.emit(this.task);  
-    this.saveUsersComp();
+    this.userListChange.emit(this.userList);
+    this.saveUsersCompEmit.emit();
     console.log("Sending data:" + this.task);
   }
   setPctComp(){
@@ -30,7 +33,7 @@ export class TaskRowComponent implements OnInit {
   setDateComp(){
     setDateFunc(this.task);
   }
-saveUsersComp(){
+  saveUsersComp(){
     saveUsersFunc(this.userList);
   }
 

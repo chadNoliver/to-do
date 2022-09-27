@@ -40,9 +40,10 @@ export class AppComponent {
 
   loadUsersComp(){
     console.log("loading users");
-    
     let loadedUserList = window.localStorage.getItem('userList')||"[]";
-    if(JSON.parse(loadedUserList).length>0){
+    if (loadedUserList =='undefined'){loadedUserList='[]'}
+    let parsed = JSON.parse(loadedUserList);
+    if(parsed.length>0 && (parsed!=undefined) && (parsed!="undefined")){
       this.userList = JSON.parse(loadedUserList);
     }
     console.log(loadedUserList); 
@@ -54,5 +55,6 @@ export class AppComponent {
     console.log(stringifiedUserList);
     window.localStorage.setItem("userList", stringifiedUserList);
   }
+
 }
 

@@ -74,7 +74,7 @@ export function setPctFunc(task:Task){
         else task.pct=parseInt(pct);
 
     }
-
+//All Below Validation Functions Taken From ehunley and ported from JS to TypeScript
     function isInvalidName(name:string|null): boolean{
         if (name==null) return false;
         if (name.length > 15 || name.length < 1) {
