@@ -1,4 +1,4 @@
-// app.component.ts
+// src/app/app.component.ts
 
 import { Component } from '@angular/core';
 
